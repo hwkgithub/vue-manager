@@ -1,0 +1,356 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000
+  },
+  "get_environment": {
+    "env": [
+      "test1",
+      "test2",
+      "comb",
+      "dev"
+    ],
+    "vir": [
+      "xna",
+      "xnb"
+    ]
+  },
+  "get_task_list": {
+    "auditObject": "提交/复核 策略/项目",
+    "requestCase": "发送订单请求/查询案件信息",
+    "offlineTask": "创建离线任务/查看任务记录",
+    "suspendTask": "创建卡件任务/查看任务记录"
+  },
+  "audit_strategy": {
+    "changing": [
+      "A001",
+      "A002",
+      "B100",
+      "B101",
+      "B102",
+      "R052",
+      "L087",
+      "P152"
+    ],
+    "wait_audit": [
+      "A003",
+      "B103",
+      "B104",
+      "B105",
+      "R053",
+      "R054",
+      "R055",
+      "R056",
+      "L086",
+      "L088",
+      "P151"
+    ],
+    "online": [
+      "A004",
+      "A005",
+      "B106",
+      "R057",
+      "L089",
+      "L090",
+      "P153",
+      "P154"
+    ]
+  },
+  "audit_project": {
+    "changing": [
+      "A056",
+      "A057",
+      "K172",
+      "E052",
+      "Z088",
+      "M152"
+    ],
+    "wait_audit": [
+      "A163",
+      "R053",
+      "K170",
+      "K171",
+      "E051"
+    ],
+    "online": [
+      "Z089",
+      "Z090",
+      "M153",
+      "M154",
+      "M155",
+      "M156"
+    ]
+  },
+  "case_mapping": {
+    "description": "caseId_caseNo",
+    "MOCKCASEA": "MOCKCASE01",
+    "MOCKCASEB": "MOCKCASE02"
+  },
+  "project_list": [
+    "CLA001",
+    "CLA002",
+    "CLA003"
+  ],
+  "user_list": [
+    "user1",
+    "user2"
+  ],
+  "case_record": [
+    {
+      "case_id": "MOCKCASEA",
+      "case_no": "MOCKCASE01",
+      "case_base_info": {
+        "apply_datetime": "2022-04-22 10:28:53",
+        "apply_result": "A",
+        "cost": 121509,
+        "enable": "Y",
+        "process_status": "pass",
+        "project_code": "A002",
+        "project_no": "1002",
+        "project_version": "20220422-015",
+        "remark": "pass",
+        "create_datetime": "2022-04-22 10:28:49",
+        "update_datetime": "2022-04-22 10:28:49"
+      },
+      "case_input_data": {
+        "cust_age": 22,
+        "cust_degree": "-90",
+        "product_id": "A01650595108206",
+        "birthday": "1999-07-18",
+        "asset_loan_req_no": "0c2dd9e1d1ca4974abdf46a3839745a3",
+        "contact_address_location": "-90",
+        "apply_phone_id": "C1650594249096",
+        "cust_name": "刘*",
+        "id_no": "****************3*",
+        "mobile_no": "137********",
+        "platform_mobile_id": "C1650594249096",
+        "platform_user_id": "CI1650594249772",
+        "cust_gender": "M",
+        "ocr_id_issued_by": null,
+        "cust_id_no_md5": "613263080d7d5b09b99e6e59acb6297r",
+        "cust_mobile_md5": "0adb0adc9d9c04e6r85db123f1b9b058",
+        "asset_loan_order_no": "order1650595323195",
+        "db_bank_acct_no": "621700**********"
+      },
+      "case_output_data": {
+        "apply_result": "A"
+      },
+      "case_strategy_path": [
+        "A001",
+        "A002"
+      ],
+      "case_strategy_info": [
+        {
+          "strategy_code": "A001",
+          "strategy_input_data": {},
+          "strategy_output_data": {
+            "credit_query": "XX01Y,XX02Y,XX03N",
+            "next_credit_step": "A002",
+            "max_credit_query_time": 120
+          },
+          "strategy_feature_data": {
+            "dyna": {},
+            "inner": {},
+            "third": {}
+          },
+          "strategy_flow_variable": {
+            "approve_chain": "A001",
+            "approve_duration": 64,
+            "exec_rule_code": "A001",
+            "last_output_total_hit_rules": "",
+            "recreate_flag": "N"
+          },
+          "strategy_rule_path": [
+            "R001",
+            "R002"
+          ]
+        },
+        {
+          "strategy_code": "A002",
+          "strategy_input_data": {
+            "credit_query": "XX01Y,XX02Y,XX03N",
+            "next_credit_step": "A002",
+            "max_credit_query_time": 120
+          },
+          "strategy_output_data": {
+            "result_code": "A01",
+            "temp_data_int05": -90,
+            "next_credit_step": "",
+            "temp_data_int03": -90,
+            "temp_data_int04": -90,
+            "temp_data_int01": null,
+            "temp_data_int02": 1,
+            "apply_result": "A"
+          },
+          "strategy_feature_data": {
+            "dyna": {},
+            "inner": {},
+            "third": {
+              "ps_cfv5_charge_flag": 1,
+              "pc_charge_flag": 0,
+              "pc_result_code": "E01",
+              "ty_prov1_charge_flag": -90,
+              "ty_score_charge_flag": -90,
+              "xn_dar2_cf_cnt_12m": 0,
+              "xn_prob_max_overdue": -90
+            }
+          },
+          "strategy_flow_variable": {
+            "approve_chain": "A001,A002",
+            "approve_duration": 203,
+            "credit_query_fail": "XX01",
+            "credit_query_success": "XX02,XX03",
+            "exec_rule_code": "A002",
+            "last_output_total_hit_rules": "",
+            "recreate_flag": "N"
+          },
+          "strategy_rule_path": [
+            "R005",
+            "R006",
+            "R007"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "MOCKCASEB",
+      "case_no": "MOCKCASE02",
+      "case_base_info": {
+        "apply_datetime": "2022-04-22 11:41:17",
+        "apply_no": "XNAB1650597739194",
+        "apply_result": "A",
+        "cost": 60428,
+        "enable": "Y",
+        "process_status": "pass",
+        "project_code": "R002",
+        "project_no": "S208",
+        "project_version": "20220422-008",
+        "remark": "pass",
+        "create_datetime": "2022-04-22 11:40:57",
+        "update_datetime": "2022-04-22 10:40:57"
+      },
+      "case_input_data": {
+        "cust_age": 28,
+        "cust_degree": "-90",
+        "product_id": "A01650597810197",
+        "birthday": "1993-01-20",
+        "asset_loan_req_no": "1c2dd9y1d1ca4974a6df46at839749a3",
+        "contact_address_location": "-90",
+        "apply_phone_id": "C1650597857196",
+        "cust_name": "吴**",
+        "id_no": "****************1*",
+        "mobile_no": "189********",
+        "platform_mobile_id": "C1650594249096",
+        "platform_user_id": "CI1650597865197",
+        "cust_gender": "M",
+        "ocr_id_issued_by": null,
+        "cust_id_no_md5": "8j3263050d7d5b89b99e6c59acb8297r",
+        "cust_mobile_md5": "w1db0adc9d9q04e6r85db183f1btb058",
+        "asset_loan_order_no": "order1650597922205",
+        "db_bank_acct_no": "621700**********"
+      },
+      "case_output_data": {
+        "apply_result": "A"
+      },
+      "case_strategy_path": [
+        "K012",
+        "K013",
+        "E900"
+      ],
+      "case_strategy_info": [
+        {
+          "strategy_code": "K012",
+          "strategy_input_data": {},
+          "strategy_output_data": {
+            "credit_query": "XX01Y,XX02Y,XX03N",
+            "next_credit_step": "A002",
+            "max_credit_query_time": 120
+          },
+          "strategy_feature_data": {
+            "dyna": {},
+            "inner": {},
+            "third": {}
+          },
+          "strategy_flow_variable": {
+            "approve_chain": "K012",
+            "approve_duration": 12,
+            "exec_rule_code": "K012",
+            "last_output_total_hit_rules": "",
+            "recreate_flag": "N"
+          },
+          "strategy_rule_path": [
+            "T01-A",
+            "T01-B",
+            "T01-C",
+            "T02"
+          ]
+        },
+        {
+          "strategy_code": "K013",
+          "strategy_input_data": {
+            "credit_query": "PZ01C,PC02Y,PV04C,PH05Y",
+            "next_credit_step": "K013",
+            "max_credit_query_time": 300
+          },
+          "strategy_output_data": {
+            "result_code": "X09",
+            "temp_data_str01": null,
+            "next_credit_step": "",
+            "temp_data_int01": 0,
+            "apply_result": "D"
+          },
+          "strategy_feature_data": {
+            "dyna": {},
+            "inner": {},
+            "third": {
+              "pc_charge_flag": -99,
+              "tc_corp_risk_self_prob_high_cnt_11": "00000000000"
+            }
+          },
+          "strategy_flow_variable": {
+            "approve_chain": "K012,K013",
+            "approve_duration": 203,
+            "credit_query_fail": "PV04, PZ01, PH05",
+            "credit_query_success": "PC02",
+            "exec_rule_code": "K012",
+            "last_output_total_hit_rules": "",
+            "recreate_flag": "N"
+          },
+          "strategy_rule_path": [
+            "T099"
+          ]
+        },
+        {
+          "strategy_code": "E900",
+          "error_code": "VA12",
+          "error_reason": "下一策略码为空"
+        }
+      ]
+    }
+  ],
+  "schedule_job": [
+    {
+      "job_id": "job001",
+      "job_name": "get_case_info",
+      "description": "核心发起订单请求后，等待并持续获取案件结果",
+      "interval": "60",
+      "status": "N",
+      "mode": "reactive"
+    },
+    {
+      "job_id": "job002",
+      "job_name": "test",
+      "description": "任务2",
+      "interval": "0 0/1 * * * ?",
+      "status": "Y",
+      "mode": "active"
+    }
+  ],
+  "checklist": [
+    "这是 process_A, 是第一个步骤",
+    "这是 process_B, 是第二个步骤",
+    "这是 process_C, 是第三个步骤",
+    "这是 process_D, 是第四个步骤",
+    "这是 process_E, 是第五个步骤"
+  ]
+}

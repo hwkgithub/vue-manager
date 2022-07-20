@@ -1,0 +1,5 @@
+const jlyBaseUrl = 'http://127.0.0.1:8000/jly'
+
+export default {
+  jlyBaseUrl
+}
